@@ -4,6 +4,7 @@ Tugas Akhir Task 2 - (Yustiana Fauziyah) mobile testing menggunakan appium
 ## Prasayarat
 1 Node.js
 2 Java SDK lalu set JAVA_HOME environment variable
+
 3 Android Studio lalu set ANDROID_HOME environment variable
 4 Appium Desktop / (appium command prompt) 
 
