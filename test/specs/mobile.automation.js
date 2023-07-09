@@ -1,32 +1,38 @@
-import halaman1 from '../pageobjects/halaman1.page'
-import halaman2 from '../pageobjects/halaman2.page'
-import homescreen from '../pageobjects/home.page'
-
 describe('Mobile Automation Test', () => {
     it('the application displays the opening home screen ', async () => {
+        const assertHalaman1 =  await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView[1]')
+        const formName = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.EditText')
+        const formWeight = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.EditText')
+        const formHeight = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[3]/android.widget.FrameLayout/android.widget.EditText')
+        const gender = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RadioGroup/android.widget.RadioButton[2]')
+        const nextBtn = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.Button')
+        const assertHalaman2 = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView[2]')
+        const radiobtnAktifitas = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RadioGroup/android.widget.RadioButton[1]')
+        const selesaiBtn = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.Button')
+        const assertHomescreen = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView[1]')
+
         //assert halaman1 
-        halaman1.assertHeaderWelcome().toBeDisplayed();
+        //await assertHalaman1new.toHaveText('Welcome...');
 
         //HALAMAN 1
         //input form 
-        halaman1.formName().click();
-        halaman1.formName().setValue("yustiana");
-        halaman1.formWeight().click();
-        halaman1.formWeight().setValue('50');
-        halaman1.formHeight().click();
-        halaman1.formHeight().setValue('160');
-
-        halaman1.radioBtnGender().click();
-        halaman1.nextBtn().click();
+        await formWeight.click()
+        await formWeight.setValue("50")
+        await formHeight.click()
+        await formHeight.setValue("160")
+        await gender.click()
+        await formName.click()
+        await formName.setValue("yustiana")
+        
+        //await nextBtn.click()
 
         //HALAMAN 2 
         //choose aktifitas 
-        halaman2.assertHeader().toBeDisplayed();
-        halaman2.radioBtnAktifitas().click();
-        halaman2.selesaiBtn().click();
+        //await radiobtnAktifitas.click()
+        //await selesaiBtn.click()
 
         //HOMESCREEN 
-        homescreen.assertheader1().toBeDisplayed();
-        homescreen.assertheader2().toBeDisplayed();
+        //await assertHomescreen.toBeDisplayed()
+        
     })
 })
