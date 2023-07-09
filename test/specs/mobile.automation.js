@@ -23,6 +23,7 @@ describe('Mobile Automation Test', () => {
         await gender.click()
         await formName.click()
         await formName.setValue("yustiana")
+        await driver.hideKeyboard()
         await nextBtn.click()
 
         //HALAMAN 2 
