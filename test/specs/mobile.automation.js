@@ -10,7 +10,7 @@ describe('Mobile Automation Test', () => {
         const radiobtnAktifitas = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RadioGroup/android.widget.RadioButton[1]')
         const selesaiBtn = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.Button')
         const assertHomescreen = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView[1]')
-
+        const homeBtn = await $("//android.widget.FrameLayout[@content-desc='Home']/android.view.ViewGroup/android.widget.TextView")
         //assert halaman1 
         //await assertHalaman1new.toHaveText('Welcome...');
 
@@ -23,16 +23,15 @@ describe('Mobile Automation Test', () => {
         await gender.click()
         await formName.click()
         await formName.setValue("yustiana")
-        
-        //await nextBtn.click()
+        await nextBtn.click()
 
         //HALAMAN 2 
         //choose aktifitas 
-        //await radiobtnAktifitas.click()
-        //await selesaiBtn.click()
+        await radiobtnAktifitas.click()
+        await selesaiBtn.click()
 
         //HOMESCREEN 
-        //await assertHomescreen.toBeDisplayed()
+        await homeBtn.click()
         
     })
 })
